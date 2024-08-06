@@ -1,0 +1,16 @@
+.container {
+  max-width: 960px;
+}
+.needs-validation{
+  width: inherit;
+  margin-right: 50%;
+  border-style:solid;
+  border-width:3px;
+  border-color:rgb(255, 99, 71);
+  border-radius: 15px;
+  padding: 10px;
+}
+.bg-body-tertiary{
+  margin-left: 20%;
+}
+

@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمایش اطلاعات</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>اطلاعات ثبت شده</h1>
+    <table>
+        <tr>
+            <th>نــام مشتری</th>
+            <th>نام و مدل موتور</th>
+            <th>وسایــل لـازم</th>
+            <th>مــشــکـــل</th>
+            <th>تلفن تمـــاس</th>
+        </tr>
+         {% for info in informations %}
+        <tr>
+
+            <td id="displayField1">{{ info.customer_name }}</td>
+            <td id="displayField2">{{ info.name }}</td>
+            <td id="displayField3">{{ info.tools }}</td>
+            <td id="displayField4">{{ info.problem }}</td>
+            <td id="displayField5">{{ info.phone_number }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script>
+        // دریافت داده‌ها از Local Storage و نمایش در جدول
+        document.getElementById('displayField1').innerText = localStorage.getItem('field1');
+        document.getElementById('displayField2').innerText = localStorage.getItem('field2');
+        document.getElementById('displayField3').innerText = localStorage.getItem('field3');
+        document.getElementById('displayField4').innerText = localStorage.getItem('field4');
+        document.getElementById('displayField5').innerText = localStorage.getItem('field5');
+    </script>
+</body>
+</html>
